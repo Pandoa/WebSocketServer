@@ -8,8 +8,8 @@ Creates a Web Server and serve files as well as data directly from your Unreal E
 4. For Blueprints & C++. 
 
 ### Examples
-Check out the [Examples](/Examples) section.
+Check out the [Examples](/examples.md) section.
 
 ### Support
-Check out the [Support](/support) section or contact [pandores.marketplace@gmail.com](mailto:pandores.marketplace@gmail.com).
+Check out the [Support](/support.md) section or contact [pandores.marketplace@gmail.com](mailto:pandores.marketplace@gmail.com).
 
