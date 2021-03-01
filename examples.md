@@ -47,7 +47,7 @@ HttpServer
 
 // Routes can be regex expressions.
 // Here we match all routes of the form "/users/{number}".
--> POST(TEXT("/users/(\+d)"), FHttpServerRouteCallback::CreateLambda([](const FBlueprintHttpRequest& Request, FBlueprintHttpResponse& Response) -> void
+-> Post(TEXT("/users/(\+d)"), FHttpServerRouteCallback::CreateLambda([](const FBlueprintHttpRequest& Request, FBlueprintHttpResponse& Response) -> void
 {
     Response.SetBody(TEXT("Hello World from POST."));
     Response.Send();
