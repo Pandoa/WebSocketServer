@@ -39,6 +39,8 @@ Here is an example listening for two routes:
 ```cpp
 HttpServer
 
+// A simple GET.
+// We bind a lambda expression but you can bind UObject's UFunctions as well.
 -> Get(TEXT("/data/"), FHttpServerRouteCallback::CreateLambda([](const FBlueprintHttpRequest& Request, FBlueprintHttpResponse& Response) -> void
 {
     Response.SetBody(TEXT("Hello World from GET."));
