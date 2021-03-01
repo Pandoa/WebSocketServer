@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>docsify</title>
+    <title>BlueprintHTTP - Server</title>
     <link rel="icon" href="_media/favicon.ico" />
     <meta
       name="google-site-verification"
@@ -11,9 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta
       name="keywords"
-      content="doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages"
+      content="blueprint,http,server,unreal,engine,docs,documentation"
     />
-    <meta name="description" content="A magical documentation generator." />
+    <meta name="description" content="Documentation for the Unreal Engine plugin BlueprintHTTP - Server." />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
@@ -182,6 +182,7 @@
                   'https://github.com/docsifyjs/docsify/blob/master/docs/' +
                   vm.route.file;
               }
+              return html;
               var editHtml = '[:memo: Edit Document](' + url + ')\n';
               return (
                 editHtml +
@@ -191,13 +192,7 @@
               );
             }),
               hook.afterEach(function(html) {
-                if (vm.route.path === '/') {
-                  return html;
-                }
-                return (
-                  html +
-                  '<br/> <i>Vercel</i> has given us a Pro account <br/> <a href="https://vercel.com/?utm_source=docsifyjsdocs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/docsifyjs/docsify/docs/_media/vercel_logo.svg" alt="Vercel" width="100" height="64"></a>'
-                );
+                return html;
               });
           },
         ],
