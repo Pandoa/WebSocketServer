@@ -45,17 +45,11 @@
       nav.app-nav li ul {
         min-width: 100px;
       }
-
-      #carbonads {
-        box-shadow: none !important;
-        width: auto !important;
-      }
     </style>
   </head>
 
   <body>
     <div id="app">Loading ...</div>
-    <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1/index.js"></script>
     <script>
       // Set html "lang" attribute based on URL
       var lang = location.hash.match(/#\/(de-de|es|ru-ru|zh-cn)\//);
@@ -166,7 +160,7 @@
           },
         },
         plugins: [
-          DocsifyCarbon.create('CEBI6KQE', 'docsifyjsorg'),
+          //DocsifyCarbon.create('CEBI6KQE', 'docsifyjsorg'),
           function(hook, vm) {
             hook.beforeEach(function(html) {
               if (/githubusercontent\.com/.test(vm.route.file)) {
@@ -183,13 +177,6 @@
                   vm.route.file;
               }
               return html;
-              var editHtml = '[:memo: Edit Document](' + url + ')\n';
-              return (
-                editHtml +
-                html +
-                '\n\n----\n\n' +
-                '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>'
-              );
             }),
               hook.afterEach(function(html) {
                 return html;
