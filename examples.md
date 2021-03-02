@@ -2,7 +2,25 @@
 This section contains examples for Blueprints & C++ on how to use the plugin.
 ## Blueprints
 
-!> Blueprint examples are coming soon.
+### Creating an HTTP Server
+To create an HTTP Server, call the `Create HTTP Server` node. Make sure you store the result in a variable to prevent it from 
+being garbage collected.  
+![Creates a new http server](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/CreateHttpServer.png?raw=true)
+
+### Creating an HTTPS Server
+To create an HTTPS Server, call the `Create HTTPS Server` node.  
+This node takes 4 parameters:
+1. **Cert Path**: The location of the certificate for our HTTPS server on disk.
+2. **Private Key Path**: The location of the private key for our HTTPS Server on disk.
+3. **Client Ca Cert File Path**: An optional client CA file.
+4. **Client Ca Cert Dir Path**: An optional location where the server should look for CA files.  
+![Creates a new https server](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/CreateHttpsServer.png?raw=true)
+
+### Listening for a Route
+![Listen for a route](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/AddRoute.png?raw=true)
+
+### Serving static Files
+![Serves static files](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/MountFolder.png?raw=true)
 
 ## C++
 ### Creating an HTTP Server
