@@ -37,6 +37,10 @@ Thread to execute the callback allows to win several milliseconds.
 To serve static files, just call the `Add Mount Point` node.  
 ![Serves static files](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/MountFolder.png?raw=true)
 
+### Starting the Server
+Once your routes are configured, call the `Listen` node to start the server.  
+![Listen](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/Listen.png?raw=true)
+
 ## C++
 ### Creating an HTTP Server
 You can easily create an HTTP server with the `UBlueprintHttpServer::CreateHttpServer()` method.
