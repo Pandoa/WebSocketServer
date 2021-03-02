@@ -37,21 +37,48 @@ To listen for a route, call the method matching the verb of the route. The avail
 
 Here is an example listening for two routes:
 ```cpp
+// We can use method chaining on the object as each route method
+// returns a pointer to the server.
 HttpServer
 
 // A simple GET.
 // We bind a lambda expression but you can bind UObject's UFunctions as well.
+// We choose to execute the callback on Game Thread. Note that it makes the request 
+// wait for the Game Thread to execute the callback for a few milliseconds.
 -> Get(TEXT("/data/"), FHttpServerRouteCallback::CreateLambda([](const FBlueprintHttpRequest& Request, FBlueprintHttpResponse& Response) -> void
 {
     Response.SetBody(TEXT("Hello World from GET."));
     Response.Send();
-}))
+}), /* bExecuteOnGameThread */ true)
 
 // Routes can be regex expressions.
 // Here we match all routes of the form "/users/{number}".
 -> Post(TEXT("/users/(\+d)"), FHttpServerRouteCallback::CreateLambda([](const FBlueprintHttpRequest& Request, FBlueprintHttpResponse& Response) -> void
 {
+    Response.AddHeader(TEXT("YourIpIs"), Request.GetRemoteAddress());
     Response.SetBody(TEXT("Hello World from POST."));
     Response.Send();
 }));
 ```
+
+### Serving Static Files
+To serve directly static files, we use the `AddMountPoint` method. It can be used as showed:
+```cpp
+// Mounts a folder to the server.
+HttpServer->AddMountPoint(TEXT("/static/"), TEXT("C:/www/"));
+```
+
+!> This method is not thread-safe, you can't call it once the server is started.
+
+### Starting the Server
+Once the routes are correctly setup, we start serving our clients by calling the `Listen` method:
+```cpp
+// Listen for all incoming clients at 127.0.0.1:8080.
+const bool bServerStarted = HttpServer->Listen(TEXT("127.0.0.1"), 8080);
+if (!bServerStarted)
+{
+    // Handle error.
+    // Additional information is available in the output log.
+}
+```
+
