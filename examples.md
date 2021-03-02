@@ -2,6 +2,8 @@
 This section contains examples for Blueprints & C++ on how to use the plugin.
 ## Blueprints
 
+!> Blueprint examples are coming soon.
+
 ## C++
 ### Creating an HTTP Server
 You can easily create an HTTP server with the `UBlueprintHttpServer::CreateHttpServer()` method.
@@ -74,11 +76,13 @@ HttpServer->AddMountPoint(TEXT("/static/"), TEXT("C:/www/"));
 Once the routes are correctly setup, we start serving our clients by calling the `Listen` method:
 ```cpp
 // Listen for all incoming clients at 127.0.0.1:8080.
-const bool bServerStarted = HttpServer->Listen(TEXT("127.0.0.1"), 8080);
-if (!bServerStarted)
+HttpServer->Listen(TEXT("127.0.0.1"), 8080, FHttpServerListenCallback::CreateLambda([](const bool bServerStarted) -> void
 {
-    // Handle error.
-    // Additional information is available in the output log.
-}
+    if (!bServerStarted)
+    {
+        // Handle error.
+        // Additional information is available in the output log.
+    }
+});
 ```
 
