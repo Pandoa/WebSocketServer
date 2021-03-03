@@ -45,7 +45,7 @@ With all the previous examples assembled, we arrive to the following result:
 
 ![Full example](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/FullExample.png?raw=true)
 
-If you run this code, you can now open any browser and open the page `https://localhost:8080/`. The following page will shows up:  
+If you run this code, you can now open any browser and open the page `https://localhost:8080/`. The following page will show up:  
 
 ![Client example](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/Browser.png?raw=true)
 
