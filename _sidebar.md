@@ -1,3 +1,7 @@
 - [Setup](setup.md)
-- [Examples](examples.md)
+
+Examples
+- [Blueprints](examples.md)
+- [C++](cppexamples.md)
+
 - [Support](support.md)
