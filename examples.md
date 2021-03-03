@@ -1,14 +1,13 @@
-# Examples
-This section contains examples for Blueprints & C++ on how to use the plugin.
-## Blueprints
+# Blueprints
+This section contains examples for Blueprints on how to use the plugin.
 
-### Creating an HTTP Server
+## Creating an HTTP Server
 To create an HTTP Server, call the `Create HTTP Server` node. Make sure to
 store the result in a variable to prevent it from 
 being garbage collected.  
 ![Creates a new http server](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/CreateHttpServer.png?raw=true)
 
-### Creating an HTTPS Server
+## Creating an HTTPS Server
 To create an HTTPS Server, call the `Create HTTPS Server` node.  
 This node takes 4 parameters:
 1. **Cert Path**: The location of the certificate for our HTTPS server on disk.
@@ -18,7 +17,7 @@ This node takes 4 parameters:
 
 ![Creates a new https server](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/CreateHttpsServer.png?raw=true)
 
-### Listening for a Route
+## Listening for a Route
 You can listen for a route with the `Add Route` node.  
 This node takes 4 parameters:
 1. **Verb**: The verb of the route.
@@ -33,10 +32,10 @@ Thread to execute the callback allows to win several milliseconds.
 
 !> You can't create/destroy UObjects outside of the Game Thread without risking a crash.
 
-### Serving static Files
+## Serving static Files
 To serve static files, just call the `Add Mount Point` node.  
 ![Serves static files](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/MountFolder.png?raw=true)
 
-### Starting the Server
+## Starting the Server
 Once your routes are configured, call the `Listen` node to start the server.  
 ![Listen](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/Listen.png?raw=true)
