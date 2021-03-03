@@ -39,3 +39,14 @@ To serve static files, just call the `Add Mount Point` node.
 ## Starting the Server
 Once your routes are configured, call the `Listen` node to start the server.  
 ![Listen](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/Listen.png?raw=true)
+
+## Full Example
+With all the previous examples assembled, we arrive to the following result:  
+
+![Full example](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/FullExample.png?raw=true)
+
+If you run this code, you can now open any browser and open the page `https://localhost:8080/`. The following page will shows up:
+
+
+
+
