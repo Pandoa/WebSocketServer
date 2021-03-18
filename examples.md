@@ -52,3 +52,9 @@ The following example shows how to create a simple echo server. It uses an helpe
 the server under the hood.
 
 ![Echo Server](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/EchoServer.png?raw=true)
+
+## Client for Testing
+If you want to test your server with a client, you can use the client included in the plugin.
+To open it, go to `Windows` > `WebSocket Client`.
+
+![Open WS Client](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/OpenClient.png?raw=true)
