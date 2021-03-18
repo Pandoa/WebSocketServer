@@ -35,11 +35,13 @@ The following image shows the events you can bind.
 Once the events are correctly setup, it's time to start listening for WebSocket client connections.
 
 The `Listen` node takes two parameters:
-1. **URI**: The location where to reach the WebSocket Server. It supports dynmiac route (i.e. `/path/:id/*` for `/path/{number}/*`).
+1. **URI**: The location where to reach the WebSocket Server. It supports dynamic routes (i.e. `/path/:id/*` for `/path/{number}/*`).
 2. **Port**: The port were the server will be available.
 
 ![Listen for Clients](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/Listen.png?raw=true)
 
 ## Echo Server Example
-The following example shows how to create a simple echo server:  
+The following example shows how to create a simple echo server. It uses an helper node that creates, binds and configures
+the server under the hood.
+
 ![Echo Server](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/EchoServer.png?raw=true)
