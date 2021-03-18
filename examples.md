@@ -1,53 +1,32 @@
 # Blueprints
 This section contains examples for Blueprints on how to use the plugin.
 
-## Creating an HTTP Server
-To create an HTTP Server, call the `Create HTTP Server` node. Make sure to
-store the result in a variable to prevent it from 
+## Creating a WebSocket Server
+To create a WebSocket Server, call the `CreateWebSocketServer` node.
+Make sure to store the result in a variable to prevent it from 
 being garbage collected.  
-![Creates a new http server](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/CreateHttpServer.png?raw=true)
+![Creates a new WebSocket server](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/CreateServer.png?raw=true)
 
-## Creating an HTTPS Server
-To create an HTTPS Server, call the `Create HTTPS Server` node.  
-This node takes 4 parameters:
-1. **Cert Path**: The location of the certificate for our HTTPS server on disk.
-2. **Private Key Path**: The location of the private key for our HTTPS Server on disk.
-3. **Client Ca Cert File Path**: An optional client CA file.
-4. **Client Ca Cert Dir Path**: An optional location where the server should look for CA files.  
+## Creating a Secure WebSocket Server
+To create an WebSocket Server with WSS, call the `Create Secure WebSocket Server` node.  
+This node takes 5 parameters:
+1. **Key File**: The location of the private key for our WSS Server on disk.
+2. **Cert File**: The location of the certificate for our WSS server on disk.
+3. **Dh Params File**: An optional DH parameters file.
+4. **CA File**: An optional CA file.  
 
-![Creates a new https server](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/CreateHttpsServer.png?raw=true)
+![Creates a new WebSocket Secure server](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/CreateSecureServer.png?raw=true)
 
-## Listening for a Route
-You can listen for a route with the `Add Route` node.  
-This node takes 4 parameters:
-1. **Verb**: The verb of the route.
-2. **Route**: The route where we want to listen. If your server is located at `127.0.0.1:8080` and you
-set this parameter to `/some/route/`, the full route's URL will be `127.0.0.1:8080/some/route/`.  
-Note that this parameter supports regular expressions for route matching.
-3. **Require Game Thread**: If we want to execute the callback on the Game Thread or not.  
-It might be intersting to set it to false for performance reasons. Not having to switch to Game
-Thread to execute the callback allows to win several milliseconds.
-4. **Callback**: The callback executed whenever a client try to access this route.
-![Listen for a route](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/AddRoute.png?raw=true)
+## Configuring the Server.
+Now that the server is created, you can configure your server. The following nodes are available:
 
-!> You can't create/destroy UObjects outside of the Game Thread without risking a crash.
+![Configure Nodes](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/Settings.png?raw=true)
 
-## Serving static Files
-To serve static files, just call the `Add Mount Point` node.  
-![Serves static files](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/MountFolder.png?raw=true)
+## Handling Events
+A WebSocket Server offers several events to interact with clients. 
 
-## Starting the Server
-Once your routes are configured, call the `Listen` node to start the server.  
-![Listen](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/Listen.png?raw=true)
+The following image shows the events you can bind.
 
-## Full Example
-With all the previous examples assembled, we arrive to the following result:  
+![WS Events](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/Events.png?raw=true)
 
-![Full example](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/FullExample.png?raw=true)
-
-If you run this code, you can now open any browser and open the page `https://localhost:8080/`. The following page will show up:  
-
-![Client example](https://github.com/Pandoa/BlueprintHttpServer/blob/main/Doc/Browser.png?raw=true)
-
-
-
+!> You must bind the events before calling the `Listen` node.
