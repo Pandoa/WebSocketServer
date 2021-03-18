@@ -2,9 +2,10 @@
 This section contains examples for Blueprints on how to use the plugin.
 
 ## Creating a WebSocket Server
-To create a WebSocket Server, call the `CreateWebSocketServer` node.
+To create a WebSocket Server, call the `CreateWebSocketServer` node.  
 Make sure to store the result in a variable to prevent it from 
-being garbage collected.  
+being garbage collected.   
+
 ![Creates a new WebSocket server](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/CreateServer.png?raw=true)
 
 ## Creating a Secure WebSocket Server
@@ -39,6 +40,12 @@ The `Listen` node takes two parameters:
 2. **Port**: The port were the server will be available.
 
 ![Listen for Clients](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/Listen.png?raw=true)
+
+## Interracting with your Clients
+Now that the server listens and accepts new connections, you can communicate with your clients.
+To do so, the following nodes are available:
+
+![Client](https://github.com/Pandoa/WebSocketServer/blob/main/Doc/ClientMessage.png?raw=true)
 
 ## Echo Server Example
 The following example shows how to create a simple echo server. It uses an helper node that creates, binds and configures
