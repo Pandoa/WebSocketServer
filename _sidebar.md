@@ -2,6 +2,6 @@
 
 - Examples
   - [Blueprints](examples.md)
-  - [C++](cppexamples.md)
+  <!--- [C++](cppexamples.md)-->
 
 - [Support](support.md)
