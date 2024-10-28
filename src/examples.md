@@ -31,7 +31,7 @@ Now that the server is created, you can configure your server. The following nod
 
 <div class="centered">
 
-![Configure Nodes](_imgs/Settings.png)
+![Configure Nodes](_imgs/Settings.webp)
 
 </div>
 
@@ -69,7 +69,7 @@ To do so, the following nodes are available:
 
 <div class="centered">
 
-![Client](_imgs/ClientMessage.png)
+![Client](_imgs/ClientMessage.webp)
 
 </div>
 
@@ -87,7 +87,7 @@ the server under the hood.
 
 <div class="centered">
 
-![Advanced example](_imgs/AdvancedServerExample.png)
+![Advanced example](_imgs/AdvancedServerExample.webp)
 
 </div>
 
