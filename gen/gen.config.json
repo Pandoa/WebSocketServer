@@ -14,8 +14,8 @@
     ["js.html#", "js.html?id="],
     ["img src=\"/", "img src=\"./"]
   ],
+  "title_append": " | WebSocket Server",
   "title": {
-
   },
   "descriptions": {
   },

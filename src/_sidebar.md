@@ -1,4 +1,7 @@
-- [Setup](setup.md)
+
+- Introduction
+  - [About]()
+  - [Setup](setup.md)
 
 - Examples
   - [Blueprints](examples.md)

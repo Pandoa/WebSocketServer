@@ -85,7 +85,7 @@ async function main() {
       ldTagContent["headline"] = pageTitle.innerHTML = config["title"][route];
     }
     else {
-      pageTitle.innerHTML += ' | Firebase for Unreal Engine';
+      pageTitle.innerHTML += config["title_append"];
     }
 
     if (typeof config["descriptions"] === 'object' && config["descriptions"][route]) {
