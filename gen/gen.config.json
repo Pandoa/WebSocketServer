@@ -11,10 +11,11 @@
   "string_replaces": [
     ["href=\"/\"", "href=\".\""],
     ["?id=", ".html#"],
-    ["js.html#", "js.html?id="]
+    ["js.html#", "js.html?id="],
+    ["img src=\"/", "img src=\"./"]
   ],
   "title": {
-    
+
   },
   "descriptions": {
   },
