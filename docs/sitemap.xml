@@ -19,12 +19,7 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://pandoa.github.io/WebSocketServer/index</loc>
-    <priority>1</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://pandoa.github.io/WebSocketServer/index</loc>
+    <loc>https://pandoa.github.io/WebSocketServer/</loc>
     <priority>1</priority>
     <changefreq>weekly</changefreq>
   </url>
