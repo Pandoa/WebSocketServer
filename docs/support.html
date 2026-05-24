@@ -2,7 +2,7 @@
 	<meta charset="UTF-8">
   <link rel="shortcut icon" href="_media/icon.svg" type="image/svg+xml" sizes="any">
 	<title>Support | WebSocket Server</title>
-	<script type="application/ld+json">{"@context":"https://schema.org/","@type":"TechArticle","headline":"WebSocket Server for Unreal Engine","name":"WebSocket Server for Unreal Engine","description":"The most popular WebSocket server plugin for Unreal Engine. Connect with clients using WebSocket directly in your game using Blueprints.","author":{"@type":"Person","name":"Pandores","url":"https://www.fab.com/sellers/Pandores"},"publisher":{"@type":"Organization","name":"Pandores Marketplace","logo":{"@type":"ImageObject","url":"https://pandoa.github.io/WebSocketServer/_media/icon.svg"}},"proficiencyLevel":"Beginner","datePublished":"2024-10-15","mainEntityOfPage":"https://pandoa.github.io/WebSocketServer/","dateModified":"2024-11-05T13:28:49.264Z"}</script>
+	<script type="application/ld+json">{"@context":"https://schema.org/","@type":"TechArticle","headline":"WebSocket Server for Unreal Engine","name":"WebSocket Server for Unreal Engine","description":"The most popular WebSocket server plugin for Unreal Engine. Connect with clients using WebSocket directly in your game using Blueprints.","author":{"@type":"Person","name":"Pandores","url":"https://www.fab.com/sellers/Pandores"},"publisher":{"@type":"Organization","name":"Pandores Marketplace","logo":{"@type":"ImageObject","url":"https://pandoa.github.io/WebSocketServer/_media/icon.svg"}},"proficiencyLevel":"Beginner","datePublished":"2024-10-15","mainEntityOfPage":"https://pandoa.github.io/WebSocketServer/","dateModified":"2026-05-24T11:46:02.510Z"}</script>
 	<meta name="keywords" content="websocket,server,unreal,engine,plugin,cpp,blueprints">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="description" content="The most popular WebSocket server plugin for Unreal Engine. Connect with clients using WebSocket directly in your game using Blueprints.">
@@ -49,7 +49,7 @@
 		}
 		.progress {
 			background-color: #ea6f5a;
-			background-color: var(--theme-color, #ea6f5a);
+			background-color: var(#ea6f5a);
 			height: 2px;
 			left: 0;
 			position: fixed;
@@ -867,7 +867,7 @@
 	</style>
 	<style>
 		:root {
-			--theme-color: #ce82ff;
+			--theme-color: #ea6f5a;
 		}
 		html,
 		body,
@@ -1444,4 +1444,29 @@
 	
 	
 	
+	<script>
+  (function () {
+    const shouldLoadAnalytics =
+      window.puppeteer !== true &&
+      !navigator.webdriver &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '127.0.0.1';
+    if (!shouldLoadAnalytics) {
+      return;
+    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https' + '://www.googletagmanager.com/gtag/' + 'js' + '?' + 'id' + '=G-EGXMT0XTHL';
+    script.onload = function () {
+      gtag('config', 'G-EGXMT0XTHL');
+    };
+    document.head.appendChild(script);
+  })();
+</script>
 <div class="progress" style="opacity: 0; width: 0%;"></div></body></html>

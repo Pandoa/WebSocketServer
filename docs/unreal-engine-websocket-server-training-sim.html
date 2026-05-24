@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en" style="background-color:#101010;"><head>
 	<meta charset="UTF-8">
   <link rel="shortcut icon" href="_media/icon.svg" type="image/svg+xml" sizes="any">
-	<title>Setup | WebSocket Server</title>
-	<script type="application/ld+json">{"@context":"https://schema.org/","@type":"TechArticle","headline":"WebSocket Server for Unreal Engine","name":"WebSocket Server for Unreal Engine","description":"The most popular WebSocket server plugin for Unreal Engine. Connect with clients using WebSocket directly in your game using Blueprints.","author":{"@type":"Person","name":"Pandores","url":"https://www.fab.com/sellers/Pandores"},"publisher":{"@type":"Organization","name":"Pandores Marketplace","logo":{"@type":"ImageObject","url":"https://pandoa.github.io/WebSocketServer/_media/icon.svg"}},"proficiencyLevel":"Beginner","datePublished":"2024-10-15","mainEntityOfPage":"https://pandoa.github.io/WebSocketServer/","dateModified":"2026-05-24T11:46:01.821Z"}</script>
-	<meta name="keywords" content="websocket,server,unreal,engine,plugin,cpp,blueprints">
+	<title>WebSocket Server for Training Simulators | Real-Time Scenario Control</title>
+	<script type="application/ld+json">{"@context":"https://schema.org/","@type":"TechArticle","headline":"WebSocket Server for Unreal Engine","name":"WebSocket Server for Unreal Engine","description":"The most popular WebSocket server plugin for Unreal Engine. Connect with clients using WebSocket directly in your game using Blueprints.","author":{"@type":"Person","name":"Pandores","url":"https://www.fab.com/sellers/Pandores"},"publisher":{"@type":"Organization","name":"Pandores Marketplace","logo":{"@type":"ImageObject","url":"https://pandoa.github.io/WebSocketServer/_media/icon.svg"}},"proficiencyLevel":"Beginner","datePublished":"2024-10-15","mainEntityOfPage":"https://pandoa.github.io/WebSocketServer/","dateModified":"2026-05-24T11:46:03.493Z"}</script>
+	<meta name="keywords" content="training simulator WebSocket, instructor control Unreal Engine, real-time scenario injection, VR training WebSocket, performance tracking UE5">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="The most popular WebSocket server plugin for Unreal Engine. Connect with clients using WebSocket directly in your game using Blueprints.">
+	<meta name="description" content="Build interactive training simulators in Unreal Engine with WebSocket server. Enable instructor-led scenario changes, real-time feedback, and trainee performance tracking.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 	<meta property="og:title" content="WebSocket Server for Unreal Engine">
 	<meta property="og:type" content="website">
@@ -1412,32 +1412,268 @@
 	bShowCPP = JSON.parse(getCookie('bShowCPP'));
 </script><style type="text/css">.docsify-pagination-container{display:flex;flex-wrap:wrap;justify-content:space-between;overflow:hidden;margin:5em 0 1em;border-top:1px solid rgba(0,0,0,.07)}.pagination-item{margin-top:2.5em}.pagination-item a,.pagination-item a:hover{text-decoration:none}.pagination-item a{color:currentColor}.pagination-item a:hover .pagination-item-title{text-decoration:underline}.pagination-item:not(:last-child) a .pagination-item-label,.pagination-item:not(:last-child) a .pagination-item-subtitle,.pagination-item:not(:last-child) a .pagination-item-title{opacity:.3;transition:all .2s}.pagination-item:last-child .pagination-item-label,.pagination-item:not(:last-child) a:hover .pagination-item-label{opacity:.6}.pagination-item:not(:last-child) a:hover .pagination-item-title{opacity:1}.pagination-item-label{font-size:.8em}.pagination-item-label>*{line-height:1;vertical-align:middle}.pagination-item-label svg{height:.8em;width:auto;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px}.pagination-item--next{margin-left:auto;text-align:right}.pagination-item--next svg{margin-left:.5em}.pagination-item--previous svg{margin-right:.5em}.pagination-item-title{font-size:1.6em}.pagination-item-subtitle{text-transform:uppercase;opacity:.3}</style></head>
 
-<body data-page="setup.md" class="ready sticky"><main><button class="sidebar-toggle" aria-label="Menu"><div class="sidebar-toggle-button"><span></span><span></span><span></span></div></button><aside class="sidebar"><h1 class="app-name"><a class="app-name-link" data-nosearch="" href=".">WebSocket Server</a></h1><div class="sidebar-nav"><ul><li><p>Introduction</p><ul><li><a href="" title="About">About</a></li><li class="active"><a href="setup" title="Setup">Setup</a><ul class="app-sub-sidebar"><li><a class="section-link" href="setup.html#c-optional" title="C++ (Optional)">C++ (Optional)</a></li><li><a class="section-link" href="setup.html#wss-optional" title="WSS (Optional)">WSS (Optional)</a></li></ul></li></ul></li><li><p>Examples</p><ul><li><a href="examples" title="Blueprints">Blueprints</a></li></ul></li><li><p>Contact</p><ul><li><a href="support" title="Support">Support</a></li></ul></li></ul></div></aside><section class="content"><article class="markdown-section" id="main"><h1 id="setup"><a href="setup.html#setup" data-id="setup" class="anchor"><span>Setup</span></a></h1><p>This section will guide you on how to setup WebSocket Server.
-If you don't plan to use <code>C++</code> or <code>WSS</code>, you can directly start using the plugin by following <a href="examples">the examples</a>.</p><h2 id="c-optional"><a href="setup.html#c-optional" data-id="c-optional" class="anchor"><span>C++ (Optional)</span></a></h2><p>If you plan to use the C++ API, you have to first add the <code>WebSocketServer</code> module to your project.
-To do so, open <code>YourProject.Build.cs</code> and add the following line in the constructor:</p><pre v-pre="" data-lang="cs"><code class="lang-cs">PrivateDependencyModuleNames<span class="token punctuation">.</span><span class="token function">AddRange</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> <span class="token punctuation">{</span> <span class="token string">"WebSocketServer"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>Once it's done, you can include the C++ files:</p><pre v-pre="" data-lang="cpp"><code class="lang-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"WebSocketServer.h"</span>  <span class="token comment">// For the UWebSocketServer class.</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"WebSocketClient.h"</span>  <span class="token comment">// For the UWebSocket class.</span></span></code></pre><h2 id="wss-optional"><a href="setup.html#wss-optional" data-id="wss-optional" class="anchor"><span>WSS (Optional)</span></a></h2><p>To use WSS, you have to get a certificate as well as a key file. You can generate a self-signed one for free with OpenSSL.</p><div class="docsify-pagination-container">
-        <div class="pagination-item pagination-item--previous">
-          <a href="">
-            <div class="pagination-item-label">
-              <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
-                <polyline fill="none" vector-effect="non-scaling-stroke" points="8,2 2,8 8,14"></polyline>
-              </svg>
-              <span>PREVIOUS</span>
-            </div>
-            <div class="pagination-item-title">About</div>
-      <div class="pagination-item-subtitle">Introduction</div></a>
-        </div>
-      
+<body data-page="README.md" class="ready sticky"><main><button class="sidebar-toggle" aria-label="Menu"><div class="sidebar-toggle-button"><span></span><span></span><span></span></div></button><aside class="sidebar"><h1 class="app-name"><a class="app-name-link" data-nosearch="" href=".">WebSocket Server</a></h1><div class="sidebar-nav"><ul><li><p>Introduction</p><ul><li class="active"><a href="" title="About">About</a></li><li><a href="setup" title="Setup">Setup</a></li></ul></li><li><p>Examples</p><ul><li><a href="examples" title="Blueprints">Blueprints</a></li></ul></li><li><p>Contact</p><ul><li><a href="support" title="Support">Support</a></li></ul></li></ul></div></aside><section class="content"><article class="markdown-section" id="main"><div class="pv-hero">
+<div class="pv-hero-content">
+<div class="pv-tag">TRAINING</div>
+<h1>Training Simulator Control</h1>
+<p class="pv-subtitle">Create immersive training simulators with instructor-led WebSocket server. Push scenario updates, inject events in real time, and track trainee performance.</p>
+<div class="pv-actions">
+<a href="https://www.fab.com/listings/c52d0c7a-1104-4263-bf71-668a56ebfa43" class="pv-button">
+<span style="text-transform: uppercase;font-weight:bold">DOWNLOAD PLUGIN</span>
+<img class="pv-button-icon" src="https://pandoa.github.io/FirebaseFeatures/_images/buyueicon.png" alt="Unreal Engine Icon">
+</a>
+</div>
+</div>
+</div>
+<div class="pv-section">
+<div class="pv-section-header">
+<span>CORE FEATURE</span>
+<h2>Instructor Control Panel</h2>
+</div>
+<div class="pv-grid">
+<a href="examples" class="pv-card">
+<div class="pv-card-top">
+<div class="pv-card-icon">SERVER</div>
+<div class="pv-arrow">→</div>
+</div>
+<h3>Blueprint Examples</h3>
+<p>Build instructor dashboards that can modify simulation parameters, inject random events, and monitor trainee actions in real time.</p>
+</a>
+</div>
+</div>
+<a href="support" class="pv-support">
+<div>
+<span>NEED HELP?</span>
+<h3>Support & Community</h3>
+<p>Fast and friendly support. Reach out anytime via email or check the documentation.</p>
+</div>
+<div class="pv-support-arrow">→</div>
+</a>
+<style>
+.pv-hero{
+display:grid;
+grid-template-columns:1fr;
+gap:64px;
+align-items:center;
+padding:24px 0 12px;
+}
+.pv-hero-content{
+min-width:0;
+}
+.pv-tag{
+display:inline-flex;
+align-items:center;
+height:34px;
+padding:0 14px;
+border-radius:999px;
+background:rgba(234,111,90,.08);
+border:1px solid rgba(234,111,90,.14);
+color:#ea6f5a;
+font-size:11px;
+font-weight:700;
+letter-spacing:.14em;
+}
+.pv-hero h1{
+margin:22px 0 0;
+font-size:clamp(72px,9vw,128px);
+line-height:.88;
+letter-spacing:-.04em;
+font-weight:800;
+color:white;
+}
+.pv-subtitle{
+margin:28px 0 0;
+max-width:680px;
+font-size:19px;
+line-height:1.8;
+color:rgba(255,255,255,.6);
+}
+.pv-actions{
+display:flex;
+margin-top:38px;
+}
+.pv-button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:14px;
+height:60px;
+padding:0 26px;
+border-radius:18px;
+background:#ea6f5a;
+color:#121212 !important;
+font-size:15px;
+font-weight:800;
+text-decoration:none !important;
+transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+box-shadow:0 18px 50px rgba(234,111,90,.25);
+}
+.pv-button:hover{
+transform:translateY(-2px);
+background:#ff8a70;
+box-shadow:0 26px 70px rgba(234,111,90,.32);
+}
+.pv-button-icon{
+border-radius:0;
+width:32px;
+height:32px;
+display:block;
+flex:none;
+background:transparent !important;
+border:none !important;
+box-shadow:none !important;
+filter:none !important;
+opacity:1;
+}
+.pv-section{
+margin-top:68px;
+}
+.pv-section-header{
+margin-bottom:22px;
+}
+.pv-section-header span{
+display:block;
+margin-bottom:10px;
+font-size:11px;
+font-weight:700;
+letter-spacing:.14em;
+color:rgba(255,255,255,.32);
+}
+.pv-section-header h2{
+margin:0;
+font-size:44px;
+line-height:1;
+letter-spacing:-.06em;
+color:white;
+}
+.pv-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:20px;
+}
+.pv-card{
+display:flex;
+flex-direction:column;
+gap:22px;
+padding:32px;
+min-height:240px;
+border-radius:32px;
+text-decoration:none !important;
+background:rgba(255,255,255,.02);
+border:1px solid rgba(255,255,255,.05);
+transition:transform .18s ease,border-color .18s ease,background .18s ease;
+}
+.pv-card:hover{
+transform:translateY(-4px);
+border-color:rgba(234,111,90,.18);
+background:rgba(255,255,255,.03);
+}
+.pv-card-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.pv-card-icon{
+display:flex;
+align-items:center;
+justify-content:center;
+width:52px;
+height:52px;
+border-radius:18px;
+background:rgba(234,111,90,.08);
+border:1px solid rgba(234,111,90,.12);
+font-size:12px;
+font-weight:700;
+letter-spacing:.08em;
+color:#ea6f5a;
+}
+.pv-arrow{
+font-size:24px;
+color:rgba(255,255,255,.2);
+transition:all .18s ease;
+}
+.pv-card:hover .pv-arrow{
+transform:translateX(4px);
+color:#ea6f5a;
+}
+.pv-card h3{
+margin:0;
+font-size:34px;
+line-height:1.05;
+letter-spacing:-.06em;
+color:white;
+}
+.pv-card p{
+margin:0;
+font-size:16px;
+line-height:1.8;
+color:rgba(255,255,255,.58);
+}
+.pv-support{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:24px;
+margin-top:68px;
+padding:32px;
+border-radius:32px;
+text-decoration:none !important;
+background:rgba(255,255,255,.02);
+border:1px solid rgba(255,255,255,.05);
+transition:transform .18s ease,border-color .18s ease;
+}
+.pv-support:hover{
+transform:translateY(-2px);
+border-color:rgba(234,111,90,.18);
+}
+.pv-support span{
+display:block;
+margin-bottom:10px;
+font-size:11px;
+font-weight:700;
+letter-spacing:.14em;
+color:rgba(255,255,255,.32);
+}
+.pv-support h3{
+margin:0;
+font-size:38px;
+line-height:1;
+letter-spacing:-.06em;
+color:white;
+}
+.pv-support p{
+margin:14px 0 0;
+font-size:16px;
+line-height:1.8;
+color:rgba(255,255,255,.58);
+}
+.pv-support-arrow{
+flex:none;
+font-size:18px;
+font-weight:700;
+color:#ea6f5a;
+}
+@media (max-width:1100px){
+.pv-hero{grid-template-columns:1fr;gap:42px;}
+}
+@media (max-width:780px){
+.pv-grid{grid-template-columns:1fr;}
+.pv-hero h1{font-size:72px;}
+.pv-section-header h2{font-size:38px;}
+.pv-card{min-height:auto;}
+.pv-support{flex-direction:column;align-items:flex-start;}
+}
+</style><div class="docsify-pagination-container">
         <div class="pagination-item pagination-item--next">
-          <a href="examples">
+          <a href="setup">
             <div class="pagination-item-label">
               <span>NEXT</span>
               <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
                 <polyline fill="none" vector-effect="non-scaling-stroke" points="2,2 8,8 2,14"></polyline>
               </svg>
             </div>
-            <div class="pagination-item-title">Blueprints</div>
-      <div class="pagination-item-subtitle">Examples</div></a>
+            <div class="pagination-item-title">Setup</div>
+      <div class="pagination-item-subtitle">Introduction</div></a>
         </div>
       </div></article></section></main>
 	<div id="work-notice" class="work-container">
